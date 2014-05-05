@@ -1,0 +1,23 @@
+[general]
+ui = basic
+accounts = Gmail
+pythonfile = ~/.offlineimap/offlineimap-helper.py
+
+
+[Account Gmail]
+localrepository = Gmail-Local
+remoterepository = Gmail-Remote
+
+
+[Repository Gmail-Local]
+type = Maildir
+localfolders = ~/.mail/Gmail
+
+[Repository Gmail-Remote]
+type = Gmail
+remoteusereval = get_username("imap.gmail.com")
+remotepasseval = get_password("imap.gmail.com")
+realdelete = no
+maxconnections = 4 
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+folderfilter = lambda foldername: foldername in ['[Gmail]/All Mail','[Gmail]/Drafts','[Gmail]/Sent Mail','[Gmail]/Trash','[Gmail]/Spam','INBOX']

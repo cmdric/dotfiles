@@ -1,0 +1,20 @@
+alias getpack="getpack --user apuignav"
+
+# Don't do heavy path stripping in the LHCb setup scripts
+export LB_NO_STRIP_PATH=1
+
+# User specific environment and startup programs
+export EMACSDIR=/afs/cern.ch/lhcb/software/releases/TOOLS/Tools/Emacs/pro
+
+export PATH
+unset USERNAME
+
+if [ "$VO_LHCB_SW_DIR" != "" ] ; then
+    source ${VO_LHCB_SW_DIR}/lib/group_login.sh
+else
+    source /sw/lib/group_login.sh
+fi
+
+export LSCOLORS="gxfxcxdxbxegedabagacad"
+alias ls='ls --color'
+#DISABLE_LS_COLORS="false"
