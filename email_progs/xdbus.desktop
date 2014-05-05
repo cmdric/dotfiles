@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=GetXdbus
-GenericName=GetXdbus
-Comment=Get .Xdbus for offlineimap
-Exec=~/.offlineimap/export_x_info.sh
-Terminal=false
-Type=Application
-X-GNOME-Autostart-enabled=true
