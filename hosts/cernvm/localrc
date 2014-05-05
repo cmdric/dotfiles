@@ -1,0 +1,19 @@
+alias getpack="getpack --user apuignav"
+
+# Don't do heavy path stripping in the LHCb setup scripts
+export LB_NO_STRIP_PATH=1
+
+export PATH
+unset USERNAME
+
+if [ -f /cvmfs/lhcb.cern.ch/group_login.sh ]; then
+      . /cvmfs/lhcb.cern.ch/group_login.sh
+fi
+
+if [ -f /cvmfs/lhcb.cern.ch/lib/group_extra_settings.sh ]; then
+      . /cvmfs/lhcb.cern.ch/lib/group_extra_settings.sh
+fi
+
+export LSCOLORS="gxfxcxdxbxegedabagacad"
+alias ls='ls --color'
+#DISABLE_LS_COLORS="false"
