@@ -646,9 +646,9 @@
             "if &background == 'dark'
                 "hi Visual term=reverse cterm=reverse ctermfg=10 ctermbg=7
             "endif
-            ""let g:solarized_termtrans = 1
-            "let g:solarized_termcolors = 256
-            "colorscheme solarized
+            let g:solarized_termtrans = 1
+           let g:solarized_termcolors = 256
+            colorscheme solarized
         "endif
         if &term == 'xterm' || &term == 'screen'
             set t_Co=256                 " Enable 256 colors to stop the CSApprox warning and make xterm vim shine
