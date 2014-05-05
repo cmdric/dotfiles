@@ -1,12 +1,44 @@
-# Atari 2600 (Stella) support for multiple assemblers
-# - DASM
-# - CC65
+.dotstate
+*.py[co]
 
-# Assembled binaries and object directories
-obj/
-a.out
-*.bin
-*.a26
+# OSX       taken from: https://github.com/github/gitignore/blob/master/Global/OSX.gitignore
+# ----------------------------------------------------------------------------------------------
+.DS_Store
+# Thumbnails
+._*
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
 
-# Add in special Atari 7800-based binaries for good measure
-*.a78
+# Windows   taken from: https://github.com/github/gitignore/blob/master/Global/Windows.gitignore
+# ----------------------------------------------------------------------------------------------
+# Windows image file caches
+Thumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Tags      taken from: https://github.com/github/gitignore/blob/master/Global/Tags.gitignore
+# ----------------------------------------------------------------------------------------------
+# Ignore tags created by etags and ctags
+TAGS
+tags
+
+# Vim       taken from: https://github.com/github/gitignore/blob/master/Global/vim.gitignore
+# ----------------------------------------------------------------------------------------------
+.*.sw[a-z]
+*.un~
+Session.vim
+vim/vim/bundle
+vim/vim/yankring_history
+vim/vim/sessions/
+
+# SASS
+# ----------------------------------------------------------------------------------------------
+.sass-cache
+
+# SSH
+ssh/ssh/id_dsa*
+ssh/ssh/environment*
+ssh/ssh/authorized_keys
+ssh/ssh/known_hosts
