@@ -1,0 +1,87 @@
+Host pi
+        HostName 192.168.1.128
+	ForwardX11 yes
+        GSSAPIAuthentication yes
+        GSSAPIDelegateCredentials yes
+ 	PubkeyAuthentication no
+        ServerAliveInterval 120
+
+
+
+Host lxplus*.cern.ch lxplus* cern
+        HostName lxplus.cern.ch
+	ForwardX11 yes
+        GSSAPIAuthentication yes
+        GSSAPIDelegateCredentials yes
+ 	PubkeyAuthentication no
+        ServerAliveInterval 120
+
+Host github.com git
+	Protocol 2
+	GSSAPIAuthentication yes
+	GSSAPIDelegateCredentials yes
+	ForwardX11 no
+	IdentityFile ~/.ssh/id_dsa_cmdric
+
+Host svn.cern.ch svn
+	Protocol 2
+	GSSAPIAuthentication yes
+	GSSAPIDelegateCredentials yes
+	ForwardX11 no
+	IdentityFile ~/.ssh/id_dsa
+
+Host isscvs.cern.ch isscvs
+	Protocol 2
+	GSSAPIAuthentication yes
+	GSSAPIDelegateCredentials yes
+	ForwardX11 no
+	IdentityFile ~/.ssh/id_dsa
+
+
+Host lhcb09.ecm.ub.es lhcb09 ecm09
+        HostName  lhcb09.ecm.ub.es
+	Protocol 2
+	PubkeyAuthentication yes
+	PasswordAuthentication yes
+	ForwardX11 yes
+        ServerAliveInterval 120
+
+Host lhcb02.ecm.ub.es lhcb02 ecm02
+        HostName  lhcb02.ecm.ub.es
+	Protocol 2
+	PubkeyAuthentication yes
+	PasswordAuthentication yes
+	ForwardX11 yes
+        ServerAliveInterval 120
+
+Host lhcb06.ecm.ub.es lhcb06 ecm06
+        HostName  lhcb06.ecm.ub.es
+	Protocol 2
+	PubkeyAuthentication yes
+	PasswordAuthentication yes
+	ForwardX11 yes
+        ServerAliveInterval 120
+
+Host lphe.epfl.ch lphe
+        HostName  lphe.epfl.ch
+	Protocol 2
+	PubkeyAuthentication yes
+	PasswordAuthentication yes
+	ForwardX11 yes
+        ServerAliveInterval 120
+
+Host lphelc1a.epfl.ch clusterA
+        HostName   lphelc1a.epfl.ch
+	Protocol 2
+	PubkeyAuthentication yes
+	PasswordAuthentication yes
+	ForwardX11 yes
+        ServerAliveInterval 120
+
+Host lphelc1b.epfl.ch clusterB
+        HostName   lphelc1b.epfl.ch
+	Protocol 2
+	PubkeyAuthentication yes
+	PasswordAuthentication yes
+	ForwardX11 yes
+        ServerAliveInterval 120

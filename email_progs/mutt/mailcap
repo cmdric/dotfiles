@@ -1,0 +1,5 @@
+text/html; lynx -display_charset=utf-8 -dump %s; nametemplate=%s.html; copiousoutput
+application/pdf; /home/potterat/.mutt/mutt_bgrun evince %s;
+image/*; /home/potterat/.mutt/mutt_bgrun eog '%s'
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; /home/potterat/.mutt/mutt_bgrun libreoffice %s;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; /home/potterat/.mutt/mutt_bgrun libreoffice %s;
