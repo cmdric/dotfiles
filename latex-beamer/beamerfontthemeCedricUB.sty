@@ -1,0 +1,54 @@
+\mode<presentation>
+
+
+%\setbeamerfont{title}     {size=\huge}
+ \setbeamerfont{title}{size=\Huge}
+ \setbeamerfont{subtitle} {size=\large}
+ \setbeamerfont{frametitle}{size=\LARGE}
+
+ \setbeamerfont{author}{size=\large, family=\rmfamily}
+\setbeamerfont{block body}{size=\scriptsize, family=\rmfamily}
+\setbeamerfont{block title}{size=\scriptsize, family=\rmfamily}
+\setbeamerfont{normal text}{size=\scriptsize, family=\rmfamily}
+\setbeamerfont{text}{size=\scriptsize, family=\rmfamily}
+\setbeamerfont{normal}{size=\scriptsize, family=\rmfamily}
+\setbeamerfont{body}{size=\scriptsize, family=\rmfamily}
+\setbeamerfont{alertblock body}{size=\scriptsize, family=\rmfamily}
+\setbeamerfont{alertblock title}{size=\scriptsize, family=\rmfamily}
+\setbeamerfont{exampleblock body}{size=\scriptsize, family=\rmfamily}
+\setbeamerfont{exampleblock title}{size=\scriptsize, family=\rmfamily}
+\setbeamerfont{frame number in foot}{size=\tiny, family=\rmfamily}
+
+\mode
+<all>
+\DeclareOptionBeamer{stillsansserifmath}[]{\def\mathfamilydefault{\sfdefault}\beamer@sansmathtrue}
+\DeclareOptionBeamer{stillsansserifsmall}[]{\def\beamer@tsfont{\sffamily}}
+\DeclareOptionBeamer{stillsansseriflarge}[]{\def\beamer@sfont{\sffamily}}
+\DeclareOptionBeamer{stillsansseriftext}[]{\def\familydefault{\sfdefault}}
+
+\DeclareOptionBeamer{onlymath}[]{
+  \def\beamer@tsfont{\sffamily}
+  \def\beamer@sfont{\sffamily}
+  \def\familydefault{\sfdefault}
+}
+
+\def\beamer@tsfont{\rmfamily}
+\def\beamer@sfont{\rmfamily}
+\def\familydefault{\rmdefault}
+\def\mathfamilydefault{\rmdefault}
+\beamer@sansmathfalse
+
+\ProcessOptionsBeamer
+
+\setbeamerfont{tiny structure}{size=\tiny, family=\beamer@tsfont}
+\setbeamerfont{structure}{size=\scriptsize, family=\beamer@sfont}
+
+
+
+
+
+
+
+
+\setbeamerfont{normal text}{size=\scriptsize} % ignored currently
+\setbeamerfont{projected text}{parent={size=\scriptsize,tiny structure}}

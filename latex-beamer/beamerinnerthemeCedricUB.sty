@@ -1,0 +1,38 @@
+
+\mode<presentation>
+
+% ----------------------------------------------------------------------------
+% *** TITLE PAGE <<<
+% ----------------------------------------------------------------------------
+\defbeamertemplate*{title page}{UB theme}
+{ \vskip7ex%
+  \raggedleft\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par%
+  \ifx\insertsubtitle\@empty%
+  \else%
+    \vskip5ex%
+    {\raggedright\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+  \fi%
+  \ifx\insertauthor\@empty%
+  \else%
+    \vskip4ex%
+    {\raggedright\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor\par
+}%
+  \fi%
+  \vfill%
+}
+% ----------------------------------------------------------------------------
+% *** END TITLE PAGE >>>
+% ----------------------------------------------------------------------------
+
+
+
+% ----------------------------------------------------------------------------
+% *** BLOCKS <<<
+% ----------------------------------------------------------------------------
+\setbeamertemplate{blocks}[rounded][shadow=false]
+% ----------------------------------------------------------------------------
+% *** END BLOCKS >>>
+% ----------------------------------------------------------------------------
+
+\mode
+<all>

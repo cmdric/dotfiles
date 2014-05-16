@@ -1,0 +1,230 @@
+% ----------------------------------------------------------------------------
+% *** required packages <<<
+% ----------------------------------------------------------------------------
+\RequirePackage{calc}
+\RequirePackage{ifthen}
+% ----------------------------------------------------------------------------
+% *** END required packages >>>
+% ----------------------------------------------------------------------------
+
+\mode<presentation>
+
+% ----------------------------------------------------------------------------
+% *** DEFINE LENGTHS <<<
+% ----------------------------------------------------------------------------
+\newlength{\margin}
+\setlength{\margin}{0.5cm}% 0.69in* 64/127 *2.54cm/in
+
+\newlength{\UBlogowidth}
+\setlength{\UBlogowidth}{4.5cm}% 0.87in* 64/127 *2.54cm/in
+\newlength{\UBlogoheight}
+\setlength{\UBlogoheight}{1.40066895151709692cm}% 0.70364761837273193in* 64/127 *2.54cm/in
+\ifbeamer@dark\else%
+  \newlength{\UBlogopadding}
+  % padding = distance from the rightmost point of the logo to where the U starts;
+  % value approximately \UBlogowidth*0.25
+  \setlength{\UBlogopadding}{0.084cm}
+\fi
+% ----------------------------------------------------------------------------
+% *** END DEFINE LENGTHS >>>
+% ----------------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------------
+% *** DEFINE IMAGES <<<
+% ----------------------------------------------------------------------------
+\pgfdeclareimage[width=\UBlogowidth]{UBlogo}{UB_logo}
+
+% The text logo is a bit of a special case:
+% As given in the PowerPoint(R) slides, the logo is 3.12''x0.36'', the picture file
+% 449px x 52px. However, in the picture file, there is a margin of
+% left: 3px, right: 3px, top: 8px, bottom: 2px.
+% The PDF that we use here does not have any margins, so adapt the sizes here.
+\ifthenelse{ \boolean{beamer@dark} \OR \boolean{beamer@darktitle} }
+% then
+{\pgfdeclareimage[width=\paperwidth]{UBBackgroundDark}{UBBackgroundDark}}
+%else
+{}
+\pgfdeclareimage[width=\paperwidth]{UBBackgroundLight}{UBBackgroundLight}
+
+% ----------------------------------------------------------------------------
+% *** END DEFINE IMAGES <<<
+% ----------------------------------------------------------------------------
+
+
+
+% ----------------------------------------------------------------------------
+% *** HEADLINE <<<
+% ----------------------------------------------------------------------------
+\ifthenelse{ \boolean{beamer@dark} \OR \(\boolean{beamer@darktitle}\AND\c@framenumber=1\) }{
+ % \defbeamertemplate*{headline}{UB theme}{}%
+}{
+  \newlength{\logotopmargin}%
+  \setlength{\logotopmargin}{0.004cm}%  0.55in* 64/127 *2.54cm/in
+  \defbeamertemplate*{headline}{UB theme}%
+  {%
+    \vskip\logotopmargin%
+    \hskip\margin%
+    \ifthenelse{ \boolean{beamer@dark} \OR \(\boolean{beamer@darktitle}\AND\c@framenumber=1\) }
+    {%
+      \vskip5cm% TODO: get rid of this quirk
+    }
+    {%
+      \flushright{ \pgfuseimage{UBlogo}}
+    }
+  }
+}
+% ----------------------------------------------------------------------------
+% *** END HEADLINE <<<
+% ----------------------------------------------------------------------------
+
+% ----------------------------------------------------------------------------
+% *** MARGINS <<<
+% ----------------------------------------------------------------------------
+\setbeamersize{text margin left=\margin,%
+               text margin right=\margin}
+
+
+% ----------------------------------------------------------------------------
+% *** END MARGINS >>>
+% ----------------------------------------------------------------------------
+
+
+% ----------------------------------------------------------------------------
+% *** FRAMETITLE <<<
+% ----------------------------------------------------------------------------
+\newlength\frametitletopmargin
+\ifbeamer@compress%
+  \setlength{\frametitletopmargin}{-0.3cm}% 0.3in* 64/127 *2.54cm/in
+  %\setlength{\frametitleleftmargin}{0.8384cm}% 0.3in* 64/127 *2.54cm/in
+  %\setlength{\frametitlerightmargin}{0.8384cm}% 0.3in* 64/127 *2.54cm/in
+\else
+  \setlength{\frametitletopmargin}{-0.3cm}% 0.74in* 64/127 *2.54cm/in
+  %\setlength{\frametitleleftmargin}{0.8384cm}% 0.3in* 64/127 *2.54cm/in
+  %\setlength{\frametitlerightmargin}{0.8384cm}% 0.3in* 64/127 *2.54cm/in
+\fi
+
+\ifbeamer@dark\else%
+  \newlength{\frametitlewidth}
+  \setlength{\frametitlewidth}{\textwidth-\UBlogowidth-\UBlogopadding}
+\fi  
+
+\defbeamertemplate*{frametitle}{UB theme}
+{%
+  \ifbeamer@dark%
+    % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    \vskip\frametitletopmargin%
+    \raggedleft\insertframetitle\par%
+    % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  \else%
+
+    \ifbeamer@compress%
+      \nointerlineskip%
+      %\vskip-\UBlogoheight%
+      \vbox to \UBlogoheight{%
+       % \vfil%
+        \leftskip=\UBlogowidth%
+        \advance\leftskip by\UBlogopadding%
+        % TODO: employ `leftskip` here, get rid of \hfill
+        \begin{beamercolorbox}[leftskip=\leftskip]{frame title}%
+        \hfill\insertframetitle\par%
+        \end{beamercolorbox}%
+        %\vfil%
+      }%
+    \else%
+      \medskip%
+      \begin{beamercolorbox}[right]{frame title}%
+        \insertframetitle\par%
+      \end{beamercolorbox}%
+    \fi%
+  \fi%
+
+
+
+}
+% ----------------------------------------------------------------------------
+% *** END FRAMETITLE >>>
+% ----------------------------------------------------------------------------
+
+
+
+% ----------------------------------------------------------------------------
+% *** FOOTLINE <<<
+% ----------------------------------------------------------------------------
+% See the discussion above for the margin (pixel) quirks.
+\newlength{\textlogobottommarginDark}
+% actUBl bottom margin in the PowerPoint(R) theme: 7.5'' - 6.83'' - 0.36'' + 0.36'' * 2px/52px
+\setlength{\textlogobottommarginDark}{0.41452307692307688cm}% (7.5'' - 6.83'' - 0.36'' + 0.36'' * 2px/52px)* 64/127 *2.54cm/in
+\newcommand\uTextColorPosDark {\pgfpoint{\margin}{\textlogobottommarginDark}}
+
+\newlength{\textlogobottommarginLight}
+% actUBl bottom margin in the PowerPoint(R) theme: 7.5'' - 6.80'' - 0.36'' + 0.36'' * 2px/52px
+\setlength{\textlogobottommarginLight}{0.45292307692307715cm}% (7.5''-6.80''-0.36''+0.36''*2px/52px)* 64/127 *2.54cm/in
+\newcommand\uTextColorPosLight{\pgfpoint{\margin}{\textlogobottommarginLight}}
+
+\newlength{\logorightmargin}%
+\setlength{\logorightmargin}{12.1344cm}% 9.48in* 64/127 *2.54cm/in
+\newlength{\logobottommargin}%
+\setlength{\logobottommargin}{0.512cm}% 0.4in* 64/127 *2.54cm/in
+\newcommand\posUBlogoFoot{\pgfpoint{\logorightmargin}{\logobottommargin}}
+
+\newcommand{\uWavePos}{\pgfpoint{\paperwidth}{0cm}}
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+\defbeamertemplate*{footline}{theme dark}
+{%
+   % \pgftext[right,bottom,at=\posUBlogoFoot]{\pgfuseimage{UBlogo}}%
+    \ifthenelse{\c@framenumber=1 \OR \NOT \boolean{beamer@compress}}
+    % then
+    {%
+      \pgftext[right,bottom,at=\posUBlogoFoot]{\pgfuseimage{UBlogo}}%
+     % \pgftext[left,bottom,at=\uTextColorPosLight]{\pgfuseimage{uTextColor}}%
+    }%
+    % else
+    {}%
+    %\pgftext[right,bottom,at=\uWavePos]{\pgfuseimage{uWave}}%
+    \ifbeamer@framenumber%
+      \ifnum\c@framenumber=1\else
+        \pgftext[left,bottom,at=\pgfpoint{0.01\paperwidth}{0.0045\paperwidth}]{%
+          \usebeamerfont{frame number in foot}%
+          \usebeamercolor[fg]{frame number in foot}\mytitle}
+          \pgftext[right,bottom,at=\pgfpoint{0.995\paperwidth}{0.005\paperwidth}]{%
+          \usebeamerfont{frame number in foot}%
+          \usebeamercolor[fg]{frame number in foot2}[\insertframenumber{}/\inserttotalframenumber]%
+        }%
+      \fi
+    \fi%
+   
+}%
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+% ----------------------------------------------------------------------------
+% *** END of FOOTLINE >>>
+% ---------------------------------------------------------------------------- 
+
+
+
+
+% ----------------------------------------------------------------------------
+% *** BACKGROUND <<<
+% ----------------------------------------------------------------------------
+\defbeamertemplate*{background canvas}{UB theme}
+{%
+  \ifthenelse{ \boolean{beamer@dark} \OR \(\boolean{beamer@darktitle}\AND\c@framenumber=1\) }
+  % *** THEN ***
+  {%
+    \ifnum\c@framenumber=1%
+      \pgfuseimage{UBBackgroundDark}
+    \else%
+      \pgfuseimage{UBBackgroundLight}%
+    \fi%
+  }
+  % *** ELSE ***
+  {}
+}
+% ----------------------------------------------------------------------------
+% *** END BACKGROUND <<<
+% ----------------------------------------------------------------------------
+
+\mode
+<all>

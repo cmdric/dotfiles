@@ -1,0 +1,95 @@
+
+\mode<presentation>
+
+\definecolor{UBblue}{RGB}{0,61,100}
+\colorlet{UBblue100}{UBblue}
+\colorlet{UBblue75} {UBblue!75!white}
+\colorlet{UBblue50} {UBblue!50!white}
+\colorlet{UBblue25} {UBblue!25!white}
+\colorlet{UBblue10} {UBblue!10!white}
+\colorlet{UBblue5}  {UBblue!5!white}
+
+
+
+\definecolor{UBgreen}{RGB}{0,100,0}
+\colorlet{UBgreen100}{UBgreen}
+\colorlet{UBgreen75} {UBgreen!75!white}
+\colorlet{UBgreen50} {UBgreen!50!white}
+\colorlet{UBgreen25} {UBgreen!25!white}
+\colorlet{UBgreen10} {UBgreen!10!white}
+\colorlet{UBgreen5}  {UBgreen!5!white}
+
+
+\definecolor{UBred}{RGB}{126,0,47}
+\colorlet{UBred100}{UBred}
+\colorlet{UBred75} {UBred!75!white}
+\colorlet{UBred50} {UBred!50!white}
+\colorlet{UBred25} {UBred!25!white}
+\colorlet{UBred10} {UBred!10!white}
+\colorlet{UBred5}  {UBred!5!white}
+
+\definecolor{vividbrown}{RGB}{215,154,70}
+\colorlet{vividbrown100}{vividbrown}
+\colorlet{vividbrown75} {vividbrown!75!white}
+\colorlet{vividbrown50} {vividbrown!50!white}
+\colorlet{vividbrown25} {vividbrown!25!white}
+\colorlet{vividbrown10} {vividbrown!10!white}
+\colorlet{vividbrown5}  {vividbrown!5!white}
+% =========================================================================
+
+
+\ifbeamer@dark%
+
+  \setbeamercolor{structure}{fg=UBblue}%
+  \setbeamercolor{normal text}{fg=UBblue}%
+  \setbeamercolor{title}{fg=UBblue10}%
+  \setbeamercolor{frametitle}{fg=white}%
+      \setbeamercolor{author}{fg=UBblue}%
+      \setbeamercolor{date}{fg=UBblue}%
+      \setbeamercolor{item}{fg=UBblue}%
+  \setbeamercolor{frame number in foot}{fg=UBblue}%
+  \setbeamercolor{frame number in foot2}{fg=UBblue10}%
+
+
+
+\else%
+  \setbeamercolor{structure}{fg=UBblue}%
+  \setbeamercolor{normal text}{fg=UBblue}%
+  \setbeamercolor{frametitle}{fg=UBblue}%
+
+  \setbeamercolor{frame number in foot}{fg=white}%
+
+  \ifbeamer@darktitle%
+      \setbeamercolor{title}{fg=white}%
+      \setbeamercolor{subtitle}{fg=white}%
+      \setbeamercolor{author}{fg=UBblue}%
+      \setbeamercolor{date}{fg=UBblue}%
+  \else
+      \setbeamercolor{subtitle}{fg=UBred}%
+  \fi
+
+\fi
+
+
+% =======================================================================
+% alert color
+\setbeamercolor{alerted text}{fg=UBred}
+% =======================================================================
+
+% =======================================================================
+% blocks
+\setbeamercolor{block title}{use=structure,fg=UBblue,bg=UBblue25}
+\setbeamercolor{block title alerted}{use=alerted text,fg=white,bg=UBred}
+\setbeamercolor{block title example}{use=structure text,fg=white,bg=UBblue25}
+
+\setbeamercolor{block body}        {fg=UBblue,use=block title,bg=UBblue10}
+
+
+\setbeamercolor{block body alerted}{fg=UBblue,use=block title alerted,bg=white}
+\setbeamercolor{block body example}{fg=UBblue,use=block title,bg=white}
+
+% =======================================================================
+
+
+\mode
+<all>
