@@ -392,4 +392,5 @@ function corename()   # Get name of app that created a corefile.
 
 eval "$(dircolors ~/.dircolors)"
 zstyle ':completion:*' special-dirs true
-
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export LANG=en_US.UTF-8

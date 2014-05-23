@@ -1,0 +1,98 @@
+\documentclass[compress,10pt]{beamer} 
+\usepackage{mathptmx}
+\usepackage{helvet}
+\usepackage{/home/potterat/Documents/latex_bib_sty/include_pres}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\newcommand{\myauth}{{}}
+\newcommand{\mytitle}{\tiny{gpu}}
+\setbeamertemplate{navigation symbols}{}
+\usetheme[dark,framenumber]{CedricUB}
+\usepackage{keyval}
+
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,snakes}
+
+\usepackage{verbatim}
+\newcommand\putpic[5]{% 
+        \begin{textblock}{#3}(#1,#2) 
+  \includegraphics[width=#3, 
+  height=#4]{#5} 
+     \end{textblock} 
+} 
+
+\newcounter{backupcounter}
+
+\title{\vspace{-1.0cm}GPU\\
+  \vspace{2.7cm}
+  \small{C\'edric Potterat}
+}
+\subtitle{\vspace{1.45cm}\small{Reun\~{a}o LAPE\vspace{0.7cm}}}
+
+\author{\scriptsize{Mar 25, 2014}}
+
+
+
+
+
+\begin{document}
+
+% ---------------------------------------------------------------------------
+% *** Titlepage <<<
+
+% ----------------------------------------------------------------------------
+\maketitle
+% ----------------------------------------------------------------------------
+% *** END of Titlepage >>>
+% ----------------------------------------------------------------------------
+
+
+
+
+\begin{frame}
+  \frametitle{} 
+   \begin{block}{}
+  \begin{itemize}
+   \item Officially: Not for Upgrade (nor Run2), it has to be seen as R\&D. Do we gain something using GPU (or any other hardware structure) ?
+    \item Parasite Strategy. Try to have another hardware structure for the online (1st, then other soft) 
+    \item usually cheap to have test machines (and CERN/LHCb already have test machine too).
+       \end{itemize}
+  \end{block}
+
+ \begin{block}{in LHCb}
+  \begin{itemize}
+   \item "convener": Niko, Xavier Vilasis (La Salle, BCN), Donatella Lucchesi (Padova)
+   \item kick off: 1st workshop on many-core April 25, 2012. 48th A\&S W. 
+   \item second kickoff when they started to appear in Indico and more people looked interested in (-> Stripping people for example)
+   \item meeting on Friday morning \ldots
+   \item would/should be used in "parasite" mode during some time in Run2. to see the real gain (if any)
+       \end{itemize}
+  \end{block}
+
+
+  \begin{block}{Use Cases}
+  \begin{itemize}
+   \item Trigger \& Track Reco (Alice, NA62)
+   \item Rich (NA62)
+       \end{itemize}
+   \end{block}
+
+\end{frame}
+
+\begin{frame}
+   \begin{block}{work needed}
+  \begin{itemize}
+   \item Service Software (need to be transparent for the (c++) user)
+   \item Specific algorithm (VeLo pix, track Reco\ldots jet Reco (?))
+       \end{itemize}
+   \end{block}
+ \begin{block}{}
+  \begin{itemize}
+\item I have no particular experience in GPU, I tried some CUDA examples on my own computer. (it impressed me enough to be really interested)
+\item I am interested.
+\item I will probably meet and discuss with Niko and Xavi beginning of May (commissioning week)   \end{itemize}
+   \end{block}
+\end{frame}
+
+\end{document}

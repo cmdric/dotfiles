@@ -98,8 +98,7 @@ set edit_hdrs
 
 
 # Pour la gestion des accents
-set locale="fr_CH.utf8"
-
+set charset="utf-8"
 ## sinon, silence
 set beep=no
 # Beep when new mail arrives.
