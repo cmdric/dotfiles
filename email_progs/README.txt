@@ -8,4 +8,5 @@
 7) logout and login
 8) mutt.desktop -> /usr/share/applications/.
 9) use offlineimap-gnome-tool.py to set up passowrd for offlineimpa for gmail: server imap.gmail.com
-10) save cern and gmail for msmtp and goobok respct. via python2 "import keyring, keyring.set_password('cern','username','passwd') and ('gmail','username','passwd')"
+10) save gmail goobok respct. via python2 "import keyring, keyring.set_password('cern','username','passwd') and ('gmail','username','passwd')"
+10) save cern cred using msmtp-gnome-tool.py: server smtp.cern.ch

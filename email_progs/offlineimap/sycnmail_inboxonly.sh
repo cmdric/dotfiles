@@ -8,7 +8,8 @@
 #env | grep DBUS_SESSION_BUS_ADDRESS > $HOME/.Xdbus
 #echo 'export DBUS_SESSION_BUS_ADDRESS' >> $HOME/.Xdbus
 
-sendmailcommand="$HOME/.msmtp/msmtp-runqueue.sh"
+#<<<<<<< HEAD
+#sendmailcommand="$HOME/.msmtp/msmtp-runqueue.sh"
 source $HOME/.Xdbus
 #Check connection status
 if ! ping -c1 www.google.com > /dev/null 2>&1; then 
@@ -20,6 +21,11 @@ if ! ping -c1 www.google.com > /dev/null 2>&1; then
         exit 1;
     fi
 fi
+#=======
+
+
+#source /home/potterat/.Xdbus
+#>>>>>>> db5f7055adfe4a6405ca8b5d2ae23ff0fd3e11d6
 
 
 #(${sendmailcommand} &> ~/.msmtp/queue.log) &
@@ -27,7 +33,7 @@ monitor() {
     local pid=$1 i=0
 
     while ps $pid &>/dev/null; do
-        if (( i++ > 5 )); then
+        if (( i++ > 15 )); then
             echo "Max checks reached. Sending SIGKILL to ${pid}..." >&2
             kill -9 $pid; return 1
         fi
@@ -44,4 +50,9 @@ if ps $pid &>/dev/null; then
     echo "Process $pid already running. Exiting..." >&2
     exit 1
 fi
+<<<<<<< HEAD
 offlineimap -o -qf INBOX -u quiet & monitor $!
+=======
+
+offlineimap -o -qf INBOX & monitor $!
+>>>>>>> db5f7055adfe4a6405ca8b5d2ae23ff0fd3e11d6
