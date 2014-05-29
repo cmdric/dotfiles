@@ -10,13 +10,13 @@
 
 
 
-source $HOME/.Xdbus
+source /home/potterat/.Xdbus
 
 monitor() {
     local pid=$1 i=0
 
     while ps $pid &>/dev/null; do
-        if (( i++ > 5 )); then
+        if (( i++ > 15 )); then
             echo "Max checks reached. Sending SIGKILL to ${pid}..." >&2
             kill -9 $pid; return 1
         fi
@@ -34,4 +34,4 @@ if ps $pid &>/dev/null; then
     exit 1
 fi
 
-offlineimap -o -qf INBOX -u quiet & monitor $!
+offlineimap -o -qf INBOX & monitor $!
