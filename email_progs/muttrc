@@ -1,5 +1,6 @@
 set editor="vim \"+set nonumber\" \"+set textwidth=0\" \"+set wrap\" \"+set spell\" +/^$/ +9"
-set sendmail = "/usr/bin/msmtp""
+#set sendmail = "~/.msmtp/msmtp-enqueue.sh" #need to run /usr/share/doc/msmtp/msmtpqueue/msmtp-runqueue.sh in cron job. here done with syncmail_inboxonly.sh in .offlineimap
+set sendmail ="/usr/bin/msmtp"
 set from ="cedric.potterat@cern.ch"
 set realname = "Cédric Potterat"
 
