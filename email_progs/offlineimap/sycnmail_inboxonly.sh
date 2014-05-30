@@ -50,9 +50,4 @@ if ps $pid &>/dev/null; then
     echo "Process $pid already running. Exiting..." >&2
     exit 1
 fi
-<<<<<<< HEAD
 offlineimap -o -qf INBOX -u quiet & monitor $!
-=======
-
-offlineimap -o -qf INBOX & monitor $!
->>>>>>> db5f7055adfe4a6405ca8b5d2ae23ff0fd3e11d6

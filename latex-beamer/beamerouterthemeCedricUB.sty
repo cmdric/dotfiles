@@ -8,7 +8,7 @@
 % ----------------------------------------------------------------------------
 
 \mode<presentation>
-
+\usepackage[absolute,overlay]{textpos}
 % ----------------------------------------------------------------------------
 % *** DEFINE LENGTHS <<<
 % ----------------------------------------------------------------------------
@@ -34,6 +34,7 @@
 % *** DEFINE IMAGES <<<
 % ----------------------------------------------------------------------------
 \pgfdeclareimage[width=\UBlogowidth]{UBlogo}{UB_logo}
+\pgfdeclareimage[width=\UBlogowidth]{UFRJ}{UFRJ}
 
 % The text logo is a bit of a special case:
 % As given in the PowerPoint(R) slides, the logo is 3.12''x0.36'', the picture file
@@ -70,7 +71,7 @@
       \vskip5cm% TODO: get rid of this quirk
     }
     {%
-      \flushright{ \pgfuseimage{UBlogo}}
+     % \flushright{ \pgfuseimage{UBlogo}}
     }
   }
 }
@@ -177,7 +178,7 @@
     \ifthenelse{\c@framenumber=1 \OR \NOT \boolean{beamer@compress}}
     % then
     {%
-      \pgftext[right,bottom,at=\posUBlogoFoot]{\pgfuseimage{UBlogo}}%
+      %\pgftext[right,bottom,at=\posUBlogoFoot]{\pgfuseimage{UBlogo}}%
      % \pgftext[left,bottom,at=\uTextColorPosLight]{\pgfuseimage{uTextColor}}%
     }%
     % else
@@ -215,7 +216,16 @@
   {%
     \ifnum\c@framenumber=1%
       \pgfuseimage{UBBackgroundDark}
+      \begin{textblock*}{4cm}(0.5cm,0.5cm) % {block width} (coords)
+      \includegraphics[width=3cm]{UFRJ}
+
+      \includegraphics[width=3cm]{if.png}
+      \vspace{0.5cm}
+      \includegraphics[width=3cm]{UB_logo2.png}
+        \end{textblock*}
+
     \else%
+      %\put(20,20){\pgfuseimage{UFRJ}}
       \pgfuseimage{UBBackgroundLight}%
     \fi%
   }
