@@ -1,12 +1,12 @@
 #!/usr/bin/sh
 source $HOME/.Xdbus
-export SSH_AUTH_SOCK=/tmp/potterat/ssh-agent.sock
+export SSH_AUTH_SOCK=/tmp/$USER/ssh-agent.sock
 if [ ! -L $SSH_AUTH_SOCK ]; then
     export SSH_AUTH_SOCK=/tmp/ssh-agent.sock
 fi
 
-export baseDir=/home/potterat/CERN/notes/toBeWatched/
-toBeChecked=(ParticleFowINT ZbANANOTE)
+export baseDir=$HOME/notes/toBeWatched/
+toBeChecked=(ParticleFowINT ZbANANOTE JetAccessories JetAccessoriesMC)
 
 for i in "${toBeChecked[@]}"
 do
