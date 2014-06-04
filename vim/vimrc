@@ -65,7 +65,7 @@
             "Bundle 'sgur/ctrlp-extensions.vim'
             Bundle 'vim-scripts/sessionman.vim'
             Bundle 'matchit.zip'
-            "Bundle 'Lokaltog/vim-powerline'
+            "Bundle 'Lokaltog/powerline'
             Bundle 'bling/vim-airline'
             Bundle 'Lokaltog/vim-easymotion'
             if has('gui')

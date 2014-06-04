@@ -5,7 +5,7 @@ if [ ! -L $SSH_AUTH_SOCK ]; then
     export SSH_AUTH_SOCK=/tmp/ssh-agent.sock
 fi
 
-export baseDir=$HOME/notes/toBeWatched/
+export baseDir=$HOME/CERN/notes/toBeWatched/
 toBeChecked=(ParticleFowINT ZbANANOTE JetAccessories JetAccessoriesMC)
 
 for i in "${toBeChecked[@]}"
