@@ -1,13 +1,26 @@
 #!/usr/bin/sh
+#
+if ! ping -c1 www.google.com > /dev/null 2>&1; then 
+    # Ping could be firewalled ...
+    # '-O -' will redirect the actual html to stdout and thus to /dev/null
+    if ! wget -O - www.google.com > /dev/null 2>&1; then
+        # Both tests failed. We are probably offline 
+        # (or google is offline, i.e. the end has come)
+        exit 1;
+    fi
+fi
+#
+#
+#
 source $HOME/.Xdbus
 export SSH_AUTH_SOCK=/tmp/$USER/ssh-agent.sock
 if [ ! -L $SSH_AUTH_SOCK ]; then
     export SSH_AUTH_SOCK=/tmp/ssh-agent.sock
 fi
-
+#
 export baseDir=$HOME/CERN/notes/toBeWatched/
 toBeChecked=(ParticleFowINT ZbANANOTE JetAccessories JetAccessoriesMC)
-
+#
 for i in "${toBeChecked[@]}"
 do
     cd $baseDir$i
