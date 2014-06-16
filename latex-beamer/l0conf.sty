@@ -1,0 +1,18 @@
+\ProvidesPackage{l0conf}
+
+
+\newcommand{\Bdpp}{$ B_d \rightarrow \pi^{+} \pi^{-} $\xspace}
+\newcommand{\BsDsK}{$ B_s \rightarrow D_s K $\xspace}
+\newcommand{\toolname}{HltHadAlleyMatchCalo}
+\newcommand{\algoTwoDName}{HadL0Conf2DDecision}
+\newcommand{\algoThreeDName}{HadL0Conf3DDecision}
+\newcommand{\caloCand}{{\tt L0Calo\-Candidate}\xspace}
+\newcommand{\caloCands}{{\tt L0Calo\-Candidates}\xspace}
+\newcommand{\et}{E_{\mathrm{T}}}
+
+\newcommand{\seqboxleft}[3]{
+  \rput[lt](0.,#1){\rnode{#2}{\fbox{\begin{minipage}{0.4\textwidth}\begin{center}
+  #3 \end{center}\end{minipage}}}}}
+\newcommand{\seqboxright}[3]{
+  \rput[lt](0.6\textwidth,#1){\rnode{#2}{\fbox{\begin{minipage}{0.4\textwidth}\begin{center}
+  #3 \end{center}\end{minipage}}}}}

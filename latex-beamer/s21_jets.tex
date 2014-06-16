@@ -1,0 +1,98 @@
+\documentclass[compress,10pt]{beamer} 
+\usepackage{mathptmx}
+\usepackage{helvet}
+\usepackage{/home/potterat/Documents/latex_bib_sty/include_pres}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\newcommand{\myauth}{{}}
+\newcommand{\mytitle}{\tiny{s21.jets}}
+\setbeamertemplate{navigation symbols}{}
+\usetheme[dark,framenumber]{CedricUB}
+\usepackage{keyval}
+
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,snakes}
+
+\usepackage{verbatim}
+\newcommand\putpic[5]{% 
+    \begin{textblock}{#3}(#1,#2) 
+        \includegraphics[width=#3, 
+        height=#4]{#5} 
+    \end{textblock} 
+} 
+
+\newcounter{backupcounter}
+
+\title{\vspace{-1.0cm}Jets in Stripping\\
+    \vspace{2.7cm}
+    \small{C\'edric Potterat}
+}
+%\subtitle{\vspace{1.45cm}\small{Reun\~{a}o LAPE\vspace{0.7cm}}}
+\author{\vspace{4.3cm}\scriptsize{17/06/2014}\hfill\small{{Jets Reco.}}}
+
+
+
+
+
+\begin{document}
+
+% ---------------------------------------------------------------------------
+% *** Titlepage <<<
+
+% ----------------------------------------------------------------------------
+\maketitle
+% ----------------------------------------------------------------------------
+% *** END of Titlepage >>>
+% ----------------------------------------------------------------------------
+
+
+
+
+\begin{frame}
+    \frametitle{reminder - status} 
+    \begin{block}{}
+        \begin{itemize}
+            \item StdParticleFlow and StdJets  (R=0.5) are in CommonParticle 
+            \item usage via normal DoD.
+            \item it takes time to run both ! cutting on other variables before may be needed to be mandatory. 
+        \end{itemize}
+    \end{block}
+
+     \begin{block}{StdJets}
+        \begin{itemize}
+            \item call by default StdParticleFlow (default config)
+            \item anti-$k_T$, E scheme and R=0.5, 5GeV cut on $p_T$
+            \item all its constituants are saved as daugthers
+            \item call the new JEC - Reco14
+        \end{itemize}
+    \end{block}
+    \begin{block}{need to be redone}
+        \begin{itemize}
+            \item (not improtant for the stripping, but the output location of StdParticleFlow)
+            \item if in an extrem case you want to use custom jets\ldots do not use names like: "StdJets","PF", "ParticleFlow", "StdParticleFlow" nor "PFParticles". it could create conflics.
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{S21}  
+    \begin{block}{}
+        \begin{itemize}
+            \item R=0.7 in CommonParticle, open to discussion ?
+        \end{itemize}
+    \end{block}
+
+    \begin{block}{RAW, mdst}
+        \begin{itemize}
+            \item If you do not need to do fancy stuff with RAW, it is not needed after the ParticleFlow.
+            \item If you want to run btagging after the stripping (since it won't be in) it is safer to ask for full DST.
+            \item but, all remeber that anyway all particle that are constituante of a jet, are saved as daugthers. so if you intend to btag only no jet constituant you could go for mdst.
+            \item after removing the RAW info I do not explect to have a large difference between mdst and dst in the jet cases, we do save a lot of particles.
+        \end{itemize}
+    \end{block}
+    \begin{block}{}
+I recommand to ask for dst without raw information.
+\end{block}
+\end{frame}
+\end{document}

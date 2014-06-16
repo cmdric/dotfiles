@@ -1,0 +1,231 @@
+
+
+\ProvidesPackage{include}
+
+
+\usepackage{/home/potterat/Documents/latex_bib_sty/include_use}
+
+\usepackage{/home/potterat/Documents/latex_bib_sty/quotchap2}
+
+\usepackage{fancyvrb}
+\DefineVerbatimEnvironment{code}{Verbatim}{fontsize=\small}
+
+
+\hypersetup{
+pdfauthor = {C\'edric Potterat},
+pdftitle = {Direct Search for Standard Model-Like Higgs Boson and Software Integration of Data Acquisition Cards},
+pdfkeywords = {EPFL, CERN, LHC, LHCb, H to bb, Higgs, Jets, b-Jet, TELL1, DAQ, ECS, PVSS},
+pdfcreator = {LaTeX with hyperref package},
+pdfproducer = {dvips + ps2pdf}}
+
+
+
+\pagestyle{fancy}
+% with this we ensure that the chapter and section
+% headings are in lowercase
+\backmatter
+\renewcommand{\bibname}{References}
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhf{} %delete the current section for header and footer
+\fancyhead[LE,RO]{\bfseries\thepage}
+\fancyhead[LO]{\bfseries\rightmark}
+\fancyhead[RE]{\bfseries\leftmark}
+\renewcommand{\headrulewidth}{0.5pt}
+\addtolength{\headheight}{0.5pt}
+% make space for the rule
+\fancypagestyle{plain}{%
+  \fancyhead{} %get rid of the headers on plain pages
+  \renewcommand{\headrulewidth}{0pt} % and the line
+}
+\renewcommand{\arraystretch}{1.0}
+\newcommand{\ud}{\mathrm{d}}
+\newcommand{\codebox}[1]{\noindent\fbox{
+  \noindent\begin{minipage}{0.97\textwidth}{\tt #1}
+  \end{minipage}}\bigskip}
+%\newcommand{\code}[1]{{\tt #1}\xspace}
+
+
+\newcommand{\asymerr}[2]{\,^{+#1}_{-#2}}
+
+
+\newcommand{\abt}{\ensuremath{\sim}}
+\newcommand{\DE}{\ensuremath{\delta }\xspace}
+\newcommand{\Rmax}{\ensuremath{R_{\text{max}} }\xspace}
+\newcommand{\M}{\ensuremath{\rm GeV/c^2}\xspace}
+\newcommand{\Praw}{\ensuremath{\rm p_{\text{raw}}}\xspace}
+\newcommand{\Eraw}{\ensuremath{\rm E_{\text{raw}}}\xspace}
+\newcommand{\Emc}{\ensuremath{\rm E_{mc}}\xspace}
+\newcommand{\Pt}{\ensuremath{\rm p_T}\xspace}
+\newcommand{\Eb}{\ensuremath{\rm E_b}\xspace}
+\newcommand{\Enn}{\ensuremath{\rm E_{nn}}\xspace}
+\newcommand{\R}{\ensuremath{\rm R=(\Emc-\Enn)/\Emc}\xspace}
+\newcommand{\gevctwo}{\ensuremath{\textrm{GeV}\!/\textrm{c}^2}}
+\newcommand{\mevc}{\ensuremath{\textrm{MeV}\!/\textrm{c}}}
+\newcommand{\mevctwo}{\ensuremath{\textrm{MeV}/\textrm{c}^2}}
+
+
+
+\newcommand{\unit}[1]{\ensuremath{\,{\rm #1}}\xspace}
+\newcommand{\umev}{\;\mathrm{MeV}\!/\mathrm{c}^2}
+\newcommand{\ugev}{\;\mathrm{GeV}\!/\mathrm{c}^2}
+\newcommand{\pdf}{pdf\xspace}
+\newcommand{\mgev}{\;\mathrm{GeV}\!/\mathrm{c}}
+
+
+
+\newcommand{\SN}{$S\slash N$\ }
+\newcommand{\tentothe}[1]{\ensuremath{\times10^{#1}}}
+
+\newcommand{\etaphi}{\ensuremath{\eta-\phi}\xspace}
+\newcommand{\VP}{\ensuremath{\rm V^0}\xspace}
+\newcommand{\VI}{\ensuremath{\rm V^i}\xspace}
+\newcommand{\PSi}{\ensuremath{\rm {\bf p}^i}\xspace}
+
+\newcommand{\E}{\ensuremath{\rm E}\xspace}
+\newcommand{\mup}{\ensuremath{\mu}\xspace}
+\newcommand{\T}{TELL1\xspace}
+\newcommand{\Ts}{TELL1s\xspace}
+
+
+
+\newcommand{\particle}[1]{{\ensuremath{ #1}}\xspace}
+\newcommand{\decay}[2]{\particle{#1 \to #2}}
+
+\newcommand{\Hbb}{\decay{\PHiggs}{\Pqb\Paqb}}
+\newcommand{\ttbb}{\decay{\Pqt\Paqt}{\Pqb\PWp ~ \Paqb\PWm}}
+\newcommand{\HW}{\decay{\PHiggs\PWpm}{\Pqb\Paqb + \ell^\pm\stackrel{{\text{\tiny(---) }}}{\Pnu_\ell}}}
+\newcommand{\HZ}{\decay{\PHiggs\PZz}{\Pqb\Paqb + \ell^+\ell^-}}
+\newcommand{\HWZ}{\decay{\PHiggs\PWpm\!/\PZz}{\Pqb\Paqb + \ell}}
+
+\newcommand{\ZZ}{\decay{\PZz\PZz}{\Pqb\Paqb + \ell^+\ell^-}}
+\newcommand{\ZW}{\decay{\PZz\PWpm}{\Pqb\Paqb + \ell^\pm\stackrel{{\text{\tiny(---) }}}{\Pnu_\ell}}}
+
+
+\newcommand{\ZZn}{\ensuremath{\PZz\PZz}\xspace}
+\newcommand{\ZWn}{\ensuremath{\PZz\PWpm}\xspace}
+\newcommand{\HWZn}{\ensuremath{\PHiggs\PWpm\!/\PZz}\xspace}
+\newcommand{\ttn}{\ensuremath{\Pqt\Paqt}\xspace}
+\newcommand{\bbn}{\ensuremath{\Pqb\Paqb}\xspace}
+
+\newcommand{\Zbb}{\ensuremath{\Pphoton^\star/\PZz\!+\!2\Pqb}\xspace}
+\newcommand{\Wbb}{\ensuremath{\PWpm\!+\!2\Pqb}\xspace}
+
+
+
+
+\def\idmat{\mbox{l\hspace{-0.5em}1}}
+
+
+
+
+\DeclareRobustCommand{\PcedricL}{\HepParticle{L}{}{}\xspace}
+\DeclareRobustCommand{\APcedricL}{\HepAntiParticle{L}{}{}\xspace}
+\DeclareRobustCommand{\PcedricQ}{\HepParticle{Q}{}{}\xspace}
+\DeclareRobustCommand{\APcedricQ}{\HepAntiParticle{Q}{}{}\xspace}
+\DeclareRobustCommand{\APcedrice}{\HepAntiParticle{e}{}{}\xspace}
+\DeclareRobustCommand{\PSuPhy}{\HepSusyParticle{\Phi}{}{}\xspace}
+\DeclareRobustCommand{\APcedricf}{\HepAntiParticle{f}{}{}\xspace}
+\DeclareRobustCommand{\Pcedricf}{\HepParticle{f}{}{}\xspace}
+
+
+
+
+%% decay arrows
+\newcommand{\psto}[2]{\ncangle[linewidth=0.4pt,angleA=-90,angleB=180,nodesep=6pt]{->}{#1}{#2}}
+\newcommand{\mynode}[1]{\pnode(1.5mm,1mm){#1}}
+
+\newcommand{\bmchapter}[1]{\chapter{\boldmath #1}}
+\newcommand{\bmsection}[1]{\markright{\boldmath #1}\section[#1]{\boldmath #1}\markright{\boldmath #1}}
+\newcommand{\bmsubsection}[1]{\subsection[#1]{\boldmath #1}}
+\newcommand{\bmsubsubsection}[1]{\subsubsection[#1]{\boldmath #1}}
+
+
+
+
+
+% \newenvironment{chapterhead}[1]
+%   {\rule{\textwidth}{.5pt}\smallskip \\ 
+%   \begin{minipage}{0.25\textwidth} 
+%     \begin{center}
+%     \includegraphics[width=0.85\textwidth]{figures/#1} 
+%     \end{center}
+%   \end{minipage}
+%   \begin{minipage}[c]{0.72\textwidth}}
+%   {\end{minipage}\\ \rule[-2mm]{\textwidth}{1pt} \medskip}
+  
+\newenvironment{chapterhead}[1]
+  {\rule{\textwidth}{.5pt}\smallskip \\ 
+  \begin{minipage}{0.25\textwidth} 
+    \begin{center}
+    \includegraphics[width=\textwidth]{#1} 
+    \end{center}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[c]{0.72\textwidth}
+}
+  {\end{minipage}\\ 
+\rule[-2mm]{\textwidth}{.7pt} \medskip}
+
+ 
+\newenvironment{chapterhead2}[1]
+  {\rule{\textwidth}{.5pt}\smallskip \\ 
+  \begin{minipage}{0.25\textwidth} 
+    \begin{center}
+    \includegraphics[width=\textwidth]{#1} 
+    {\tiny{\it A STRONG INTERACTION}}
+    \end{center}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[c]{0.72\textwidth}
+}
+  {\end{minipage}\\ 
+\rule[-2mm]{\textwidth}{.7pt} \medskip}
+
+\chapterfont{\flushright}
+
+\bibliographystyle{THESIS_M}
+
+
+
+\usepackage{eso-pic}
+\newcommand\BackgroundPic{
+\put(175,-180){
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=1.00\paperheight,height=\paperwidth,
+keepaspectratio, angle =90]{fig_cmd/test.eps}%
+\vfill
+}}}
+
+
+\newcommand\BackgroundPicD{
+\put(-156,113){
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=.30\paperheight,height=\paperwidth,
+keepaspectratio, angle =0]{fig_cmd/higgs_title4.eps}%
+\vfill
+}}}
+
+
+
+
+
+
+ \makeatletter                            % fancyhdf.pdf p.15
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
+\hbox{}
+\vspace*{\fill}
+\thispagestyle{empty}
+\newpage
+\if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother
+
+
+
+
+%\makeindex

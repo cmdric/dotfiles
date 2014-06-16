@@ -19,6 +19,6 @@ type = Gmail
 remoteuser = cmdric@gmail.com
 remotepasseval = get_password("imap.googlemail.com")
 realdelete = no
-maxconnections = 9 
+maxconnections = 4 
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 folderfilter = lambda foldername: foldername in ['[Gmail]/All Mail','[Gmail]/Drafts','[Gmail]/Sent Mail','[Gmail]/Trash','[Gmail]/Spam','INBOX','LHCb/Grid', 'LHCb/Grid/Alarms', 'LHCb/Grid/DT', 'LHCb/Shifts']
