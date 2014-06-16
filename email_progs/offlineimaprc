@@ -15,9 +15,9 @@ localfolders = ~/.mail/Gmail
 
 [Repository Gmail-Remote]
 type = Gmail
-remoteusereval = get_username("imap.gmail.com")
-remotepasseval = get_password("imap.gmail.com")
+remoteusereval = get_username("imap.googlemail.com")
+remotepasseval = get_password("imap.googlemail.com")
 realdelete = no
-maxconnections = 8
+maxconnections = 4
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 folderfilter = lambda foldername: foldername in ['[Gmail]/All Mail','[Gmail]/Drafts','[Gmail]/Sent Mail','[Gmail]/Trash','[Gmail]/Spam','INBOX','LHCb/Grid', 'LHCb/Grid/Alarms', 'LHCb/Grid/DT', 'LHCb/Shifts']

@@ -128,6 +128,8 @@ macro index ga "<change-folder>=[Gmail].All Mail<enter>" "Go to all mail"
 macro index gs "<change-folder>=[Gmail].Sent Mail<enter>" "Go to Sent Mail"
 macro index gd "<change-folder>=[Gmail].Drafts<enter>" "Go to drafts"
 macro index gl "<change-folder>=LHCb.Grid<enter>" "Go to LHCb/Grid"
+macro index go "<change-folder>=LHCb.Grid.DT<enter>" "Go to LHCb/Gridi/DT"
+macro index gp "<change-folder>=LHCb.Grid.Alarms<enter>" "Go to LHCb/Grid/Alarms"
 
 
 # Something to mark a whole folder as ‘read’
@@ -307,8 +309,21 @@ color body          red             default         "([a-z][a-z0-9+-]*://(((([a-
 #folder-hook .                  "color status        J_black         J_status        "
 #folder-hook gmail/inbox        "color status        J_black         yellow          "
 #folder-hook gmail/important    "color status        J_black         yellow          "
-
-
+# Sidebar
+#set sidebar_width=30
+#set sidebar_visible=yes
+#set sidebar_delim='|'
+#set sidebar_sort=yes
+#color sidebar_new brightblue black# b toggles sidebar visibility
+#macro index b 'toggle sidebar_visible'
+#macro pager b 'toggle sidebar_visible'
+##macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
+##macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+## Ctrl-n, Ctrl-p to select next, previous folder.
+## # Ctrl-o to open selected folder.
+#bind index,pager \CP sidebar-prev
+#bind index,pager \CN sidebar-next
+#bind index,pager \CG sidebar-open
 
 
 

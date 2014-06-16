@@ -1,0 +1,115 @@
+
+
+\ProvidesPackage{include_pres}
+
+%\usepackage[dvips]{color}
+\usepackage{amssymb,amsmath}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{url}
+\usepackage{xspace}
+%\usepackage{wrapfig}
+\usepackage{comment}
+\usepackage{fancyhdr}
+%\usepackage{makeidx}
+\usepackage[frenchb, english]{babel}
+\usepackage{feynmp}
+\usepackage{sidecap}
+%\usepackage{pstricks, pst-node}
+\usepackage{colortbl}
+%\usepackage{psnfss}
+\usepackage[italic]{hepparticles}
+\usepackage[italic]{hepnames}
+\usepackage{multimedia}
+\usepackage{rotating}
+\usepackage{multirow}
+
+\usepackage[absolute,overlay]{textpos}
+
+
+\newcommand{\abt}{\ensuremath{\sim}}
+\newcommand{\DE}{\ensuremath{\delta }\xspace}
+\newcommand{\Rmax}{\ensuremath{R_{\text{max}} }\xspace}
+\newcommand{\M}{\ensuremath{\rm GeV/c^2}\xspace}
+\newcommand{\Praw}{\ensuremath{\rm p_{\text{raw}}}\xspace}
+\newcommand{\Eraw}{\ensuremath{\rm E_{\text{raw}}}\xspace}
+\newcommand{\Emc}{\ensuremath{\rm E_{mc}}\xspace}
+\newcommand{\Pt}{\ensuremath{\rm p_T}\xspace}
+\newcommand{\Eb}{\ensuremath{\rm E_b}\xspace}
+\newcommand{\Enn}{\ensuremath{\rm E_{nn}}\xspace}
+\newcommand{\R}{\ensuremath{\rm R=(\Emc-\Enn)/\Emc}\xspace}
+\newcommand{\gevctwo}{\ensuremath{\textrm{GeV}\!/\textrm{c}^2}}
+\newcommand{\mevc}{\ensuremath{\textrm{MeV}\!/\textrm{c}}}
+\newcommand{\mevctwo}{\ensuremath{\textrm{MeV}/\textrm{c}^2}}
+
+
+
+\newcommand{\unit}[1]{\ensuremath{\,{\rm #1}}\xspace}
+\newcommand{\umev}{\;\mathrm{MeV}\!/\mathrm{c}^2}
+\newcommand{\ugev}{\;\mathrm{GeV}\!/\mathrm{c}^2}
+\newcommand{\pdf}{pdf\xspace}
+\newcommand{\mgev}{\;\mathrm{GeV}\!/\mathrm{c}}
+
+
+
+\newcommand{\SN}{$S\slash N$\ }
+\newcommand{\tentothe}[1]{\ensuremath{\times10^{#1}}}
+
+\newcommand{\etaphi}{\ensuremath{\eta-\phi}\xspace}
+\newcommand{\VP}{\ensuremath{\rm V^0}\xspace}
+\newcommand{\VI}{\ensuremath{\rm V^i}\xspace}
+\newcommand{\PSi}{\ensuremath{\rm {\bf p}^i}\xspace}
+
+\newcommand{\E}{\ensuremath{\rm E}\xspace}
+\newcommand{\mup}{\ensuremath{\mu}\xspace}
+\newcommand{\T}{TELL1\xspace}
+\newcommand{\Ts}{TELL1s\xspace}
+
+\newcommand{\frameST}[1]{\\#1}
+
+
+\newcommand{\particle}[1]{{\ensuremath{ #1}}\xspace}
+\newcommand{\decay}[2]{\particle{#1 \to #2}}
+
+\newcommand{\Hbb}{\decay{\PHiggs}{\Pqb\Paqb}}
+\newcommand{\ttbb}{\decay{\Pqt\Paqt}{\Pqb\PWp ~ \Paqb\PWm}}
+\newcommand{\HW}{\decay{\PHiggs\PWpm}{\Pqb\Paqb + \ell^\pm\stackrel{{\text{\tiny(---) }}}{\Pnu_\ell}}}
+\newcommand{\HZ}{\decay{\PHiggs\PZz}{\Pqb\Paqb + \ell^+\ell^-}}
+\newcommand{\HWZ}{\decay{\PHiggs\PWpm\!/\PZz}{\Pqb\Paqb + \ell}}
+
+\newcommand{\ZZ}{\decay{\PZz\PZz}{\Pqb\Paqb + \ell^+\ell^-}}
+\newcommand{\ZW}{\decay{\PZz\PWpm}{\Pqb\Paqb + \ell^\pm\stackrel{{\text{\tiny(---) }}}{\Pnu_\ell}}}
+
+
+\newcommand{\ZZn}{\ensuremath{\PZz\PZz}\xspace}
+\newcommand{\ZWn}{\ensuremath{\PZz\PWpm}\xspace}
+\newcommand{\HWZn}{\ensuremath{\PHiggs\PWpm\!/\PZz}\xspace}
+\newcommand{\ttn}{\ensuremath{\Pqt\Paqt}\xspace}
+\newcommand{\bbn}{\ensuremath{\Pqb\Paqb}\xspace}
+
+\newcommand{\Zbb}{\ensuremath{\Pphoton^\star/\PZz\!+\!2\Pqb}\xspace}
+\newcommand{\Wbb}{\ensuremath{\PWpm\!+\!2\Pqb}\xspace}
+
+
+
+
+\def\idmat{\mbox{l\hspace{-0.5em}1}}
+
+
+
+
+\DeclareRobustCommand{\PcedricL}{\HepParticle{L}{}{}\xspace}
+\DeclareRobustCommand{\APcedricL}{\HepAntiParticle{L}{}{}\xspace}
+\DeclareRobustCommand{\PcedricQ}{\HepParticle{Q}{}{}\xspace}
+\DeclareRobustCommand{\APcedricQ}{\HepAntiParticle{Q}{}{}\xspace}
+\DeclareRobustCommand{\APcedrice}{\HepAntiParticle{e}{}{}\xspace}
+\DeclareRobustCommand{\PSuPhy}{\HepSusyParticle{\Phi}{}{}\xspace}
+\DeclareRobustCommand{\APcedricf}{\HepAntiParticle{f}{}{}\xspace}
+\DeclareRobustCommand{\Pcedricf}{\HepParticle{f}{}{}\xspace}
+
+
+\newsavebox{\mybox}
+\newlength{\mylength}
+
+
+%\makeindex

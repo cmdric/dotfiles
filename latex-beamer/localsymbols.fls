@@ -1,0 +1,5 @@
+PWD /home/potterat/CERN/pres/20120509_btag
+INPUT /usr/share/texmf/web2c/texmf.cnf
+INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
+INPUT localsymbols.tex
+OUTPUT localsymbols.log
