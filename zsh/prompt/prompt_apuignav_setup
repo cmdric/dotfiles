@@ -46,7 +46,7 @@ function prompt_apuignav_setup {
 
 
   if [[ "${DISPLAY%%:0*}" != "" ]]; then  
-    PROMPT='%F{red}%n%F{green}@%m:%F{cyan}${PWD/#$HOME/~}%f${git_info:+${(e)git_info[prompt]}}%(!.%B%F{red}#%f%b.%F{white}$%f%b) '
+    PROMPT='%F{brightred}%n%F{green}@%m:%F{cyan}${PWD/#$HOME/~}%f${git_info:+${(e)git_info[prompt]}}%(!.%B%F{red}#%f%b.%F{white}$%f%b) '
   else
     PROMPT='%F{green}%n@%m:%F{cyan}${PWD/#$HOME/~}%f${git_info:+${(e)git_info[prompt]}}%(!.%B%F{red}#%f%b.%F{white}$%f%b) '
   fi

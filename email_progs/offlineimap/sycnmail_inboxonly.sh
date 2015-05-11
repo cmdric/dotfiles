@@ -51,3 +51,4 @@ if ps $pid &>/dev/null; then
     exit 1
 fi
 offlineimap -o -qf INBOX -u quiet & monitor $!
+notmuch new

@@ -6,10 +6,26 @@
 #
 export EDITOR=/usr/bin/vim
 
+
+ZSH=/usr/share/oh-my-zsh/
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+DISABLE_AUTO_UPDATE="true"
+ZSH_CACHE_DIR=$HOME/.oh-my-zsh-cache
+if [[ ! -d $ZSH_CACHE_DIR ]]; then
+  mkdir $ZSH_CACHE_DIR
+fi
+
+source $ZSH/oh-my-zsh.sh
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
+
+
+
+
 
 #######################################################################
 # ZSH
@@ -36,6 +52,7 @@ alias -g P=" | pyp"
 alias -g NUL="> /dev/null 2>&1"
 # General things
 alias scpresume='rsync --partial --progress --rsh=ssh --archive'
+alias scp='noglob scp'
 alias grep='grep --color=auto'
 alias cernProxy='ssh -D 8080 -Nf cern'
 alias cernProxyDestroy='ps -ef | grep "ssh -D 8080" | grep -v grep | awk '"'"'{print $2}'"'"' | xargs kill'

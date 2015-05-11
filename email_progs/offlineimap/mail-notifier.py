@@ -8,7 +8,7 @@ import os, gtk, pynotify, rfc822, email.header, email.charset, re, imaplib, time
 # How frequently to check for new messages, in seconds
 CHECK_FREQUENCY = 300
 BOXES = {
-    "Home": "maildir:/home/potterat/.mail/Gmail/INBOX",
+    "Home": "maildir:/home/potterat/.mail/Gmail/INBOX/",
 #    "Remote": "imaps://user:pass@host.com/Inbox"
 }
 

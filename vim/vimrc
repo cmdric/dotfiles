@@ -128,7 +128,9 @@
             Bundle 'LaTeX-Box-Team/LaTeX-Box'
             Bundle 'ervandew/supertab'
             Bundle 'vim-scripts/cern_root.vim'
-            Bundle 'thomwiggers/vim-colors-solarized'
+            "Bundle 'thomwiggers/vim-colors-solarized'
+            Bundle 'tomasr/molokai'
+            Bundle 'jaromero/vim-monokai-refined'
         endif
 
     " Snipmate
@@ -203,7 +205,8 @@
 " Vim UI {
     "colorscheme jellybeans
     "highlight PmenuSel ctermfg=White ctermbg=DarkBlue guibg=DarkBlue guifg=White
-    colorscheme solarized
+    ""colorscheme solarized
+    colorscheme molokai
     set tabpagemax=15               " only show 15 tabs
     set showmode                    " display the current mode
     set title            " Show the filename in the window titlebar
@@ -648,7 +651,10 @@
             "endif
             let g:solarized_termtrans = 1
             let g:solarized_termcolors = 256
-            colorscheme solarized
+            ""colorscheme solarized
+            colorscheme molokai
+            let g:molokai_original = 0
+            let g:rehash256 = 1
         "endif
         if &term == 'xterm' || &term == 'screen'
             set t_Co=256                 " Enable 256 colors to stop the CSApprox warning and make xterm vim shine
@@ -745,8 +751,8 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 
 " ROOT Ctags
 "set tags+=~/.vim/tags/root.tags
-let g:syntastic_cpp_include_dirs = ['/usr/local/opt/root/include/root/']
-let g:syntastic_c_include_dirs = ['/usr/local/opt/root/include/root/']
+let g:syntastic_cpp_include_dirs = ['/usr/include/root/']
+let g:syntastic_c_include_dirs = ['/usr/include/root/']
 "let g:syntastic_quiet_warnings=0
 "let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['cpp'] }
 let g:syntastic_python_checkers=['pylint']
