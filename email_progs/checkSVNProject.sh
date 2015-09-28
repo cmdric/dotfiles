@@ -12,27 +12,31 @@ fi
 #
 #
 #
+
+
 source $HOME/.Xdbus
 export SSH_AUTH_SOCK=/tmp/$USER/ssh-agent.sock
 if [ ! -L $SSH_AUTH_SOCK ]; then
     export SSH_AUTH_SOCK=/tmp/ssh-agent.sock
 fi
 #
-export baseDir=$HOME/CERN/notes/toBeWatched/
-toBeChecked=(ParticleFowINT ZbANANOTE JetAccessories JetAccessoriesMC)
+export baseDir=svn+ssh://svn.cern.ch/reps/lhcb/
+toBeChecked=(Analysis/trunk/Phys/JetTagging Analysis/trunk/Phys/JetAccessoriesMC Phys/trunk/Phys/JetAccessories)
 #
 for i in "${toBeChecked[@]}"
 do
-    cd $baseDir$i
-    svn update > test.txt
-    export nLines=$(wc -l test.txt)
-    if [ "$nLines" != "2 test.txt" ]; then
-        export revT=$(svn info | grep "Last Changed Rev" | cut -d ':' -f 2)
-        svn log -v -r $revT > lastcommit.log
+    export revT=$(svn info $baseDir$i | grep "Last Changed Rev" | cut -d ':' -f 2)
+    IFS='/' read -ra FILE <<< "$i"
+    export nfile=".${FILE[@]:(-1)}"
+    pRev=$(cat $nfile)
+    if [ $pRev != $revT ]; then
+        echo $revT > .${FILE[@]:(-1)}
+        pRev=$((pRev+1))
+        svn log $baseDir$i -v -r $revT:$pRev > lastcommit.log
         export from="Cedric Potterat<cedric.potterat@cern.ch>"
-        export recip=$(cat emails.txt)
+        export recip="cedric.potterat@cern.ch"
         export subj="New Commit - Project: $i"
-        printf "From: $from\nTo: $recip\nSubject: $subj\n\n last commit:\n\n" > mail.txt
+        printf "From: $from\nTo: $recip\nSubject: $subj\n\n last commits:\n\n" > mail.txt
         cat lastcommit.log >> mail.txt
         cat mail.txt | msmtp $recip
     fi

@@ -6,6 +6,6 @@ email: cmdric@gmail.com
 # or if you want to get the password from a commmand:
 # The following are optional, defaults are shown
 ;cache_filename: ~/.goobook_cache
-;cache_expiry_hours: 24
+;cache_expiry_hours: 240
 ;filter_groupless_contacts: yes
 
