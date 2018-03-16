@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 # =============================================================================
 # @file   deploy.py
 # @author Albert Puig (albert.puig@epfl.ch)
@@ -53,9 +53,9 @@ packages = [ 'Fabric',
            ]
 
 if __name__ == '__main__':
-    if which('pip2'):
-        os.system('pip2 install -U %s' % (' '.join(packages)))
+    if which('pip'):
+        os.system('pip install -U %s' % (' '.join(packages)))
     else:
-        print "First run brew and afterwards install the pip packages"
+        print ("First run brew and afterwards install the pip packages")
 
 # EOF
