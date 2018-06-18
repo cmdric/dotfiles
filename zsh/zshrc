@@ -52,6 +52,7 @@ alias -g P=" | pyp"
 alias -g NUL="> /dev/null 2>&1"
 # General things
 alias scpresume='rsync --partial --progress --rsh=ssh --archive'
+alias gdrive='grive --path /home/potterat/GDrive'
 alias scp='noglob scp'
 alias grep='grep --color=auto'
 alias cernProxy='ssh -D 8080 -Nf cern'

@@ -37,6 +37,7 @@ fi
 [[ -d ~/.scripts ]] && export PATH=$PATH:$HOME/.scripts
 [[ -d ~/.local/bin ]] && export PATH=$PATH:$HOME/.local/bin
 [[ -d ~/.local/lib ]] && export PYTHONPATH=$HOME/.local/bin:$PYTHONPATH
+[[ -d ~/.local/lib ]] && export PYTHONPATH=$HOME/tensorflow/models:$PYTHONPATH
 [[ -d ~/.local/share/man ]] && export MANPATH=$HOME/.local/share/man:$MANPATH
 # Platform-dependent paths
 [[ -f ~/.paths ]] && source ~/.paths
